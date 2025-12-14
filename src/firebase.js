@@ -8,12 +8,12 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBTdHnzsR4RD1wysL8XTc3b0xrbIHxXhuU",
-  authDomain: "quantumyou-b5f1b.firebaseapp.com",
-  projectId: "quantumyou-b5f1b",
-  storageBucket: "quantumyou-b5f1b.firebasestorage.app",
-  messagingSenderId: "1051676888304",
-  appId: "1:1051676888304:web:8b6471646f5b55736a8635",
+  apiKey: 'AIzaSyBTdHnzsR4RD1wysL8XTc3b0xrbIHxXhuU',
+  authDomain: 'quantumyou.vercel.app',          // ← changed to Vercel domain
+  projectId: 'quantumyou-b5f1b',
+  storageBucket: 'quantumyou-b5f1b.firebasestorage.app',
+  messagingSenderId: '1051676888304',
+  appId: '1:1051676888304:web:8b6471646f5b55736a8635',
 }
 
 // Initialize Firebase

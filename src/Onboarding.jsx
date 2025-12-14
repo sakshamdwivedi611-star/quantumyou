@@ -19,11 +19,11 @@ export default function Onboarding() {
       setLoading(true)
       await signInWithPopup(auth, googleProvider)
       alert('Google sign‑in successful!')
-      // later: navigate to dashboard / future page
+      // later: navigate to dashboard
     } catch (err) {
       setError(err.message)
     } finally {
-      setLoading(false)
+      setLoading(false) // ensures button becomes clickable again
     }
   }
 
@@ -81,7 +81,7 @@ export default function Onboarding() {
           gap: '2.5rem',
         }}
       >
-        {/* Left: intro */}
+        {/* Left side */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
           <h1
             style={{
@@ -123,7 +123,7 @@ export default function Onboarding() {
           </ul>
         </div>
 
-        {/* Right: login card */}
+        {/* Right side: login panel */}
         <div
           style={{
             background: 'rgba(15,23,42,0.9)',
@@ -145,7 +145,7 @@ export default function Onboarding() {
             Log in to continue
           </h2>
 
-          {/* Google */}
+          {/* Google button */}
           <button
             type="button"
             onClick={handleGoogleLogin}
@@ -155,7 +155,9 @@ export default function Onboarding() {
               padding: '0.7rem 1rem',
               borderRadius: '999px',
               border: '1px solid rgba(148,163,184,0.7)',
-              background: 'rgba(15,23,42,0.9)',
+              background: loading
+                ? 'rgba(15,23,42,0.5)'
+                : 'rgba(15,23,42,0.9)',
               color: 'white',
               fontWeight: 600,
               fontSize: '0.9rem',
@@ -163,7 +165,7 @@ export default function Onboarding() {
               alignItems: 'center',
               justifyContent: 'center',
               gap: '0.5rem',
-              cursor: 'pointer',
+              cursor: loading ? 'not-allowed' : 'pointer',
             }}
           >
             <span
@@ -175,10 +177,10 @@ export default function Onboarding() {
                   'conic-gradient(from 45deg, #EA4335, #FBBC05, #34A853, #4285F4, #EA4335)',
               }}
             />
-            Continue with Google
+            {loading ? 'Connecting to Google…' : 'Continue with Google'}
           </button>
 
-          {/* Facebook (UI only for now) */}
+          {/* Facebook (placeholder) */}
           <button
             type="button"
             onClick={handleFacebookLogin}
@@ -197,7 +199,7 @@ export default function Onboarding() {
               alignItems: 'center',
               justifyContent: 'center',
               gap: '0.5rem',
-              cursor: 'pointer',
+              cursor: loading ? 'not-allowed' : 'pointer',
             }}
           >
             <span
@@ -246,7 +248,10 @@ export default function Onboarding() {
           </div>
 
           {/* Email login */}
-          <form onSubmit={handleEmailLogin} style={{ display: 'grid', gap: '0.8rem' }}>
+          <form
+            onSubmit={handleEmailLogin}
+            style={{ display: 'grid', gap: '0.8rem' }}
+          >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
               <label style={{ fontSize: '0.8rem', opacity: 0.8 }}>Email</label>
               <input
@@ -289,8 +294,8 @@ export default function Onboarding() {
                   marginTop: '0.2rem',
                   padding: '0.5rem 0.75rem',
                   borderRadius: '999px',
-                  background: 'rgba(239, 68, 68, 0.15)',
-                  border: '1px solid rgba(248, 113, 113, 0.7)',
+                  background: 'rgba(239,68,68,0.15)',
+                  border: '1px solid rgba(248,113,113,0.7)',
                   fontSize: '0.75rem',
                   color: '#fecaca',
                   fontWeight: 600,
@@ -314,11 +319,11 @@ export default function Onboarding() {
                 color: 'white',
                 fontWeight: 700,
                 fontSize: '0.95rem',
-                cursor: 'pointer',
+                cursor: loading ? 'not-allowed' : 'pointer',
                 boxShadow: '0 0 16px rgba(56,189,248,0.7)',
               }}
             >
-              {loading ? 'Loading...' : 'Log in with Email'}
+              {loading ? 'Loading…' : 'Log in with Email'}
             </button>
           </form>
 

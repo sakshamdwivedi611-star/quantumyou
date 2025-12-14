@@ -23,7 +23,7 @@ export default function Onboarding() {
     } catch (err) {
       setError(err.message)
     } finally {
-      setLoading(false) // ensures button becomes clickable again
+      setLoading(false)
     }
   }
 

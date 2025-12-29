@@ -141,7 +141,7 @@ export default function Onboarding() {
             Log in to continue
           </h2>
 
-          {/* Google button */}
+          {/* Google button with official logo */}
           <button
             type="button"
             onClick={handleGoogleLogin}
@@ -164,13 +164,12 @@ export default function Onboarding() {
               cursor: loading ? 'not-allowed' : 'pointer',
             }}
           >
-            <span
+            <img
+              src="https://developers.google.com/identity/images/g-logo.png"
+              alt="Google"
               style={{
                 width: '18px',
                 height: '18px',
-                borderRadius: '4px',
-                background:
-                  'conic-gradient(from 45deg, #EA4335, #FBBC05, #34A853, #4285F4, #EA4335)',
               }}
             />
             {loading ? 'Connecting to Google…' : 'Continue with Google'}

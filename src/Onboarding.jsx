@@ -45,10 +45,6 @@ export default function Onboarding() {
     }
   }
 
-  const handleFacebookLogin = () => {
-    alert('Facebook login will be added after connecting Facebook developer app.')
-  }
-
   return (
     <div
       style={{
@@ -178,47 +174,6 @@ export default function Onboarding() {
               }}
             />
             {loading ? 'Connecting to Google…' : 'Continue with Google'}
-          </button>
-
-          {/* Facebook (placeholder) */}
-          <button
-            type="button"
-            onClick={handleFacebookLogin}
-            disabled={loading}
-            style={{
-              width: '100%',
-              padding: '0.7rem 1rem',
-              borderRadius: '999px',
-              border: '1px solid rgba(59,130,246,0.7)',
-              background:
-                'linear-gradient(120deg,#1D4ED8,#2563EB,#1D4ED8)',
-              color: 'white',
-              fontWeight: 600,
-              fontSize: '0.9rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '0.5rem',
-              cursor: loading ? 'not-allowed' : 'pointer',
-            }}
-          >
-            <span
-              style={{
-                width: '18px',
-                height: '18px',
-                borderRadius: '4px',
-                background: 'white',
-                color: '#1877F2',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontWeight: 800,
-                fontSize: '0.9rem',
-              }}
-            >
-              f
-            </span>
-            Continue with Facebook
           </button>
 
           {/* Divider */}
